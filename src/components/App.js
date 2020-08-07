@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Navbar from './Navbar';
 import { Route } from "react-router-dom";
+// import './App.css';
 
 const App = () => {
     return (

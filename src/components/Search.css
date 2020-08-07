@@ -1,0 +1,11 @@
+.MuiOutlinedInput-root {
+    width: 80%;
+    /* margin-left: 4s0px; */
+}
+.MuiFormControl-root {
+    flex-direction: row !important;
+}
+
+.gettweet-search-btn {
+    margin-left: 20px !important;
+}
