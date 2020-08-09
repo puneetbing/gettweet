@@ -1,0 +1,48 @@
+{% extends 'master.html' %}
+{% block content %}
+<main>
+    <div class="download-container">
+        {% if 'error' in response %}
+            <h1>⚠️ Oops</h1>
+        {% else %}
+            <h1>🎉Download Ready 🎉</h1>
+        {% endif %}
+    </div>
+    <div class="howto download">
+        {% if 'error' in response and 'Fatal' in response['error'] %}
+            <div class="download-error">
+                {{ response['error'] }}
+            </div>
+        {% elif 'error' in response %}
+            <div class="download-error">
+                Looks like we failed to fetch the video/gif from the url provided by you.
+                It can happen : 
+                {{ response['error'] }}
+                    <ol>
+                        <li>If the url provided by you doesn't contain a downloadable media.</li>
+                        <li>Some server side issue caused this inconvenience.</li>
+                    </ol>
+                We have logged this event to recitfy the issues which might have occured.
+                <hr>
+                Lets go to homepage <span class="logo-font"><a href="/">getTweet</a></span> and try again.
+            </div>
+        {% else %}
+        <div class="download-sizes">
+            <div class="download-large">
+                <img src="{{ response.thumbnail }}">
+            </div>
+            <div class="download-btns">
+            {% for size in response.variants %}
+                <a class="download-video-btn" href="{{ response.variants[size]['url']}}" target="_blank" download>
+                    <i class="fa fa-download"></i> 
+                    Download [ {{ size }} ]
+                </a>
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+</main>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}

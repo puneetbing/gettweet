@@ -1,0 +1,107 @@
+
+a, a:visited, a:hover, a:active {
+    color: blue;
+}
+
+.download-main {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.download-large {
+    margin-right: 70px;
+}
+
+
+.download-large > img {
+	width: 440px;
+    height: 380px;
+    border-radius: 8px;
+}
+
+.howto.download{
+	margin-top: 68px;
+}
+.download-sizes {
+    display: flex;
+    margin-top: 50px;
+}
+
+.download-sizes .download-btns {
+	display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.download-video-btn {
+    margin-top: 15px;
+    display: flex;
+}
+.logo-font {
+	font-family: leckerlione-regular, Tahoma, sans-serif;
+}
+.logo-font > a{
+	color: teal;
+}
+.download-error {
+    margin: 70px 80px 0px 40px;
+	padding: 20px;
+    background-color: #ffcccc;
+    border-radius: 8px;
+}
+/* ================= ================= */
+@media (max-width: 576px) {
+	.functional-buttons	ul li:first-child a {
+		padding: 6px 10px;
+		letter-spacing: 0px;
+	}
+	.functional-buttons	ul li:last-child a {
+		padding: 6px 10px;
+		letter-spacing: 0px;
+	}
+	.functional-buttons {
+		margin-left: 7.5%;
+	}
+	.functional-buttons	ul li {
+		display: inline-block;
+		margin-left: 3px;
+	}
+	.navbar .navbar-toggler {
+		right: 20px;
+	}
+	.background-header .functional-buttons	ul li:first-child a {
+		padding: 6px 10px;
+		letter-spacing: 0px;
+	}
+	.howto {
+		margin-top: 20px;
+	}
+	.howto ol{
+		padding-left: 14px;
+	}
+	.howto img {
+		width: 290px;
+		height: 217px;
+		margin-left: 0px;
+		margin-right: 0px;
+
+	}
+	.twapp-example{
+		margin-top: -21px;
+	}
+	.howto ol ul {
+		padding-left: 0px;
+	}
+	.banner #search-section input.main-button{
+		position: absolute;
+		top: 55px;
+		/* left: 250px; */
+		left: 74vw;
+		margin-bottom: 15px;
+	}
+	.download-sizes {
+		flex-direction: column;
+	}
+	main .download-container h1{
+		font-size: 30px;
+	}
+}

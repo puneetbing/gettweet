@@ -1,0 +1,57 @@
+{% extends 'master.html' %}
+{% block content %}
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="header-text caption">
+              <h2>Download video/gif from Twitter</h2>
+              <div id="search-section">
+              	<form id="suggestion_form" name="gs" method="POST" action="/download">
+                <div class="searchText">
+                  <input type="url" name="status_url" required class="searchText" placeholder="Paste the video/gif link here and click on download.." autocomplete="on">
+                </div>
+                    <input type="submit" name="results" class="main-button" value="Download">
+                <div class="twapp-example">
+                    <input type="button" class="twapp-example-btn" name="example_gif" value="See sample video">
+                  <!-- Example : https://twitter.com/i/status/1280150799641915393 -->
+                </div>
+                 </form>
+               <div class="advSearch_chkbox">
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+    <div class="howto">
+      <h5>Download any video/gif in 3 easy steps : </h5>
+      <ol>
+        <li>Navigate to <a href="https://twitter.com/home" target="_blank">twitter</a><hr></li>
+        <li>Now here we have two options : 
+          <br>
+            <ul>
+              <li>
+                Open the tweet contaning the content and copy the url from the browser. 
+                <img alt="Getting vide/gif url using method 1"src="/assets/images/m1.jpg"></img>
+              </li>
+              <li>
+                Right click on the video and copy the address.
+                <img alt="Getting vide/gif url using method 2"src="/assets/images/m2.jpg"></img>
+              </li>
+            </ul>
+            <hr>
+        </li>
+        <li>
+          Paste the link in the above search bar and click download.
+        </li>
+      </ol>
+    </div>
+
+    
+{% endblock %}

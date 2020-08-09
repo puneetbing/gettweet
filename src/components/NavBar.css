@@ -1,3 +1,27 @@
+@font-face {
+	font-family: leckerlione-regular;
+	src: url("/fonts/LeckerliOne-Regular.ttf");
+}
+
 .ui-tab > .MuiTab-wrapper {
     flex-direction: row;
+}
+.MuiBottomNavigation-root {
+    color: #f4f4f4;
+    height: 72px !important;
+}
+.gt-doc-icon {
+    margin-right: 10px !important;
+}
+.gt-logo {
+    height: 69px;
+}
+.gt-logo-container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: leckerlione-regular !important;
+}
+.gt-logo-text {
+    font-size: 28px !important;
 }

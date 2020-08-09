@@ -1,0 +1,39 @@
+.howto {
+	padding: 30px;
+    border-radius: 5px;
+}
+.MuiSlider-root {
+    position: relative;
+}
+.howto h5{
+	margin-bottom: 20px;
+}
+.howto ol ul {
+	margin-top: 15px;
+}
+.howto img {
+	margin: 20px;
+	box-shadow: 5px 5px 10px #c4c4c4;
+    border-radius: 12px;
+    position: relative;
+}
+
+#suggestion_form .main-button:hover{
+	filter: brightness(85%);
+	/* background-color: #000428 !important; */
+}
+.howto h5{
+	margin-bottom: 20px;
+}
+.howto ol ul {
+	margin-top: 15px;
+}
+.howto img {
+	margin: 20px;
+	box-shadow: 5px 5px 10px #c4c4c4;
+	border-radius: 12px;
+}
+#suggestion_form .main-button:hover{
+	filter: brightness(85%);
+	/* background-color: #000428 !important; */
+}
