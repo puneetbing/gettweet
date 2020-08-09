@@ -98,10 +98,6 @@ async def download_contents():
 
 config = Config()
 config.bind = ["0.0.0.0:8000"]
-config.ca_certs = 'local_certs/_.hiverhq_gd_bundle.crt'
-config.certfile = 'local_certs/_.hiverhq.crt'
-config.keyfile = 'local_certs/_.hiverhq.key'
-
 
 if __name__ == "__main__":
     asyncio.run(serve(gettweet, config))

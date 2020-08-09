@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request, Form, Body
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.routing import Route, Mount
-from starlette.responses import PlainTextResponse, RedirectResponse
+from starlette.responses import PlainTextResponse, RedirectResponse, JSONResponse
 import asyncio
 from hypercorn.config import Config
 from hypercorn.asyncio import serve
@@ -10,8 +10,9 @@ from getContentDetails import get_content
 from pydantic import BaseModel, Field
 import json 
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 origins = [
-    "https://puneet.hiver.space:8000",
+    "https://gettweet.in",
     "https://twitter.com",
     "http://localhost:3000"
 ]
@@ -19,21 +20,26 @@ origins = [
 class StatusUrl(BaseModel):
     status_url: str
 
-BASE_URL = 'gettweet.in'
-
-
 async def not_found(request, exc):
-    return HTMLResponse(content={'error': 'Page not found'}, status_code=exc.status_code)
+    return JSONResponse(
+        content={'error': 'Page not found'},
+        status_code=404,
+        headers={'content-type': 'application/json'}
+    )
 
 async def server_error(request, exc):
-    return HTMLResponse(content=HTML_500_PAGE, status_code=exc.status_code)
+    return JSONResponse(
+        content={'error': 'Server Error'},
+        status_code=500,
+        headers={'content-type': 'application/json'}
+    )
 
 exception_handlers = {
     404: not_found,
     500: server_error
 }
 
-gettweet = FastAPI(debug = True, routes=routes, exception_handlers=exception_handlers)
+gettweet = FastAPI(debug = False, exception_handlers=exception_handlers)
 
 gettweet.add_middleware(
     CORSMiddleware,
@@ -58,30 +64,25 @@ async def fetch_tweet_contents(data: StatusUrl):
         response =  {"error": str(e)}
     return response
 
-
 def validate_header(request):
     if 'referer' not in request.headers or request.headers['referer'].find('https://twitter.com') != 0:
         raise Exception("[FATAL]: This link can only be opened through the extension getTweet")
-
 
 @gettweet.get("/twdownload/{status_id}")
 async def download_contents_from_extension(status_id: int, request: Request):
     try:
         validate_header(request)
-        response = get_content(status_id)
+        return get_content(status_id)
     except Exception as e:
-        response =  {"error": str(e)}
-    return landing.TemplateResponse("download.html", {"request": request, "response": response})
+        return {"error": str(e)}
 
 config = Config()
 config.bind = ["0.0.0.0:8000"]
-config.ca_certs = '../local_certs/_.hiverhq_gd_bundle.crt'
-config.certfile = '../local_certs/_.hiverhq.crt'
-config.keyfile = '../local_certs/_.hiverhq.key'
-config.debug = True
 
 
-if __name__ == "__main__":
-    asyncio.run(serve(gettweet, config))
+handler = Mangum(app, enable_lifespan=False)
+
+# if __name__ == "__main__":
+#     asyncio.run(serve(gettweet, config))
     # uvicron.run(gettweet, host="0.0.0.0", port=8000)
 
