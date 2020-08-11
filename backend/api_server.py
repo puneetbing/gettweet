@@ -80,7 +80,7 @@ config = Config()
 config.bind = ["0.0.0.0:8000"]
 
 
-handler = Mangum(app, enable_lifespan=False)
+handler = Mangum(gettweet, enable_lifespan=False)
 
 # if __name__ == "__main__":
 #     asyncio.run(serve(gettweet, config))

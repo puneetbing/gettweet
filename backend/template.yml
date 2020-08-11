@@ -3,18 +3,18 @@ Transform: AWS::Serverless-2016-10-31
 Description: >
     getTweet lambda
 Resources:
-    FastapiExampleLambda:
+    GetTweetFastAPILambdaV3:
         Type: AWS::Serverless::Function
         Properties:
             Events:
                 ApiEvent:
                     Properties:
                         RestApiId:
-                            Ref: FastapiExampleGateway
+                            Ref: GetTweetApiGatewayV3
                         Path: /{proxy+}
                         Method: ANY
                     Type: Api
-            FunctionName: fastapi-lambda-example
+            FunctionName: getweet-lambda-v3
             CodeUri: ./
             Handler: api_server.handler
             Runtime: python3.8
@@ -23,9 +23,9 @@ Resources:
             Description: getTweet lambda
             # other options, see ->
             # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy-globals.html#sam-specification-template-anatomy-globals-supported-resources-and-properties
-            Role: !Sub arn:aws:iam::${AWS::AccountId}:role/gettweetapi
+            Role: arn:aws:iam::675191224949:role/service-role/getTweet-test-role-jemoq2hk
 
-    FastapiExampleGateway:
+    GetTweetApiGatewayV3:
         Type: AWS::Serverless::Api
         Properties:
             StageName: prod
