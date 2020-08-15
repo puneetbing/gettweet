@@ -1,4 +1,5 @@
 from twitter_api.getStatusApi import *
+import re
 
 def get_content(status_id: int):
     resp = get_status(status_id)
@@ -12,12 +13,14 @@ def get_content(status_id: int):
 
 def create_size_map(content_data: dict) -> dict:
     size_map = {}
+    type_count = 0
     for variant in content_data['video_info']['variants']:
         if 'video' not in variant['content_type']:
             continue
-        dimension = "x"
-        if dimension in variant['url']:
-            dimension = variant['url'].split("/")[7]
+        dimension = re.findall("\d+x\d+", variant['url'])
+        if len(dimension) == 0:
+            type_count+=1
+            dimension = "Type_" + str(type_count)
         size_map[dimension] = {
             'url': variant['url'],
             'content_type': variant['content_type']

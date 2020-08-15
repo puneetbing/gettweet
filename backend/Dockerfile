@@ -7,6 +7,6 @@ RUN pip install mangum
 COPY . /gettweet/backend
 WORKDIR /gettweet
 # CMD ["python", "backend/ssr_server.py"]
-CMD ["python", "backend/api_server.py"]
+# CMD ["python", "backend/api_server.py"]
 
-# CMD ["sleep", "40000"]
+CMD ["sleep", "40000"]
