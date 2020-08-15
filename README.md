@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+sam validate
+sam build --use-container --debug
+sam package --s3-bucket gettweet-backend --output-template-file out.yml --region us-east-2
+sam deploy --template-file out.yml --stack-name gettweet-api-stack9 --region us-east-2 --no-fail-on-empty-changeset --capabilities CAPABILITY_IAM

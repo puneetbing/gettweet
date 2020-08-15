@@ -21,6 +21,8 @@ def create_size_map(content_data: dict) -> dict:
         if len(dimension) == 0:
             type_count+=1
             dimension = "Type_" + str(type_count)
+        else:
+            dimension = dimension.pop()
         size_map[dimension] = {
             'url': variant['url'],
             'content_type': variant['content_type']
