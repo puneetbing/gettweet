@@ -17,12 +17,12 @@ def create_size_map(content_data: dict) -> dict:
     for variant in content_data['video_info']['variants']:
         if 'video' not in variant['content_type']:
             continue
-        dimension = re.findall("\d+x\d+", variant['url'])
+        dimension = re.findall("/\d+x\d+/", variant['url'])
         if len(dimension) == 0:
             type_count+=1
             dimension = "Type_" + str(type_count)
         else:
-            dimension = dimension.pop()
+            dimension = dimension.pop().replace("/", "")
         size_map[dimension] = {
             'url': variant['url'],
             'content_type': variant['content_type']
