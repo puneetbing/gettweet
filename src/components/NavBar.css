@@ -1,8 +1,3 @@
-@font-face {
-	font-family: leckerlione-regular;
-	src: url("/fonts/LeckerliOne-Regular.ttf");
-}
-
 .ui-tab > .MuiTab-wrapper {
     flex-direction: row;
 }
@@ -20,7 +15,6 @@
     display: flex;
     /* justify-content: center; */
     align-items: center;
-    font-family: leckerlione-regular !important;
 }
 .gt-logo-text {
     font-size: 28px !important;
