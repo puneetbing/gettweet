@@ -19,7 +19,7 @@ footer ul {
 
 /* Copy Right Footer */
 .footer-copyright {
-  background: #222;
+  background: #404040;
   padding: 5px 0;
   font-size: smaller;
 }
@@ -59,7 +59,7 @@ footer ul {
   background: #f4f4f4;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 3px solid #222;
+  border-bottom: 3px solid #404040;
 }
 
 /* Footer transparent */
@@ -161,7 +161,7 @@ a.gt-footer-link{
 .typo-light div,
 .typo-light span,
 .typo-light small {
-  color: #222;
+  color: #404040;
 }
 
 .btn {
@@ -183,4 +183,27 @@ a.gt-footer-link{
   -ms-transition: all 250ms ease-in-out 0s;
   -o-transition: all 250ms ease-in-out 0s;
   transition: all 250ms ease-in-out 0s;
+}
+
+.gt-share-icons ul {
+  display: flex;
+  list-style: none;
+  margin-bottom: 0px;
+  margin-left: auto;
+  /* margin-right: 160px; */
+  align-items: center;
+  justify-content: center;
+}
+.gt-share-icons ul li:not(:first-child){
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fb-share-button {
+  display: flex !important;
+}
+footer {
+  box-shadow: 3px 0px 10px #bfbfbf
 }

@@ -15,6 +15,7 @@ import './NavBar.css';
 import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 import Footer from './Footer';
 import Privacy from './Privacy';
+import CookiePolicy from './CookiePolicy';
 
 const AntTabs = withStyles({
   indicator: {
@@ -38,12 +39,13 @@ const routeMap = {
   '/' : <Search />,
   '/howto' : <Howto />,
   '/extension' : <ChromeExtension />,
-  '/privacy': <Privacy />
+  '/privacy': <Privacy />,
+  '/cookie': <CookiePolicy />
 };
 
 const Navbar = props => {
   const classes = useStyles();
-  const [selectedTab, setSelectedTab] = useState(100);
+  const [selectedTab, setSelectedTab] = useState(0);
   const [containerHeight, setContainerHeight] = useState('92vh');
 
   const pageComponent = route => {
@@ -52,12 +54,13 @@ const Navbar = props => {
 
   const innerContainerStyle = {
     backgroundColor: '#f4f4f4',
-    height: containerHeight,
+    // height: containerHeight,
     paddingLeft: "25px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    overflow: "hidden"
+    overflow: "hidden",
+    minHeight: "100vh"
   }
 
   const navBarStyle = {
@@ -73,6 +76,10 @@ const Navbar = props => {
     }
     setSelectedTab(newValue);
   };
+  const logoClicked = e => {
+    setSelectedTab(0);
+    props.history.push("/");
+  }
 
   if (!routeMap[window.location.pathname]) {
     window.location.pathname="/";
@@ -83,7 +90,7 @@ const Navbar = props => {
       <Container>
         <Toolbar >
         
-            <Typography variant="h5" className={classes.title + ' gt-logo-container'}>
+            <Typography variant="h5" onClick={logoClicked} className={classes.title + ' gt-logo-container'}>
               <span className="gt-logo-text">
                 <span>get</span>
                 <span class="gt-logo">t<GetAppRoundedIcon fontSize='large'/></span>
@@ -107,7 +114,7 @@ const Navbar = props => {
         </Container>
       </AppBar>
       <Container maxWidth="md">
-        <Typography component="div" style={innerContainerStyle} >
+        <Typography component="div" className="gt-main-container" >
             {pageComponent(window.location.pathname)}
         </Typography>
       </Container>

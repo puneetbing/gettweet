@@ -131,25 +131,6 @@ const Search = () => {
                   name="example_gif" 
                   value="See sample video"
                 />
-                        <ul>
-                          <li>
-                            <a data-pin-do="buttonBookmark" data-pin-round="true" href="https://www.pinterest.com/pin/create/button/">
-                              <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" />
-                            </a>
-                          </li>
-                          <li>
-                          <div class="fb-share-button" 
-                          data-href="https://www.your-domain.com/your-page.html" 
-                          data-layout="button_count"></div>
-
-                          </li>
-                          <li>
-                            <script type="IN/Share" data-url="https://www.linkedin.com"></script>
-                          </li>
-                          <li>
-                            <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
-                          </li>
-                        </ul>
               </div>
 
           </form>

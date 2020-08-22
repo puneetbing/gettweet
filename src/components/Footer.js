@@ -19,9 +19,8 @@ const Footer = props => {
 
 
     return (
-        <footer >
             <Paper elevation={1}>
-            <footer id="footer" class="footer-1">
+            <footer id="gt-footer" class="footer-1">
               <div class="main-footer widgets-dark typo-light">
                 <div class="container">
                   <div class="row">
@@ -39,6 +38,9 @@ const Footer = props => {
                         <ul class="thumbnail-widget">
                           <li>
                             <div><a class="gt-footer-link" href="/privacy">Privacy Policy</a></div>
+                          </li>
+                          <li>
+                            <div><a class="gt-footer-link" href="/cookie">Cookie Policy</a></div>
                           </li>
                         </ul>
                       </div>
@@ -60,18 +62,39 @@ const Footer = props => {
               <div class="footer-copyright">
                 <div class="container">
                   <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center gt-share-icons">
                       <p>
-                        Copyright getTweet &copy; 2020. All rights reserved.            
+                             
+                        <ul>
+                          <li>
+                            Copyright getTweet &copy; 2020. All rights reserved. 
+                          </li>
+                          <li>
+                            <a data-pin-do="buttonBookmark" data-pin-round="true" href="https://www.pinterest.com/pin/create/button/">
+                              <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" />
+                            </a>
+                          </li>
+                          <li>
+                          <div class="fb-share-button" 
+                          data-href="https://www.your-domain.com/your-page.html" 
+                          data-layout="button_count"></div>
+
+                          </li>
+                          <li>
+                            <script type="IN/Share" data-url="https://www.linkedin.com"></script>
+                          </li>
+                          <li>
+                            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Download any video/gif using https://gettweet.in">Tweet</a>
+                          </li>
+                        </ul>      
                       </p>
+
                     </div>
                   </div>
                 </div>
               </div>
             </footer>
             </Paper>
-
-        </footer>
     );
 }
 

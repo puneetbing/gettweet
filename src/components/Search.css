@@ -58,25 +58,6 @@
     font-size: 14px;
 }
 
-.gt-example ul {
-    display: flex;
-    list-style: none;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: 160px;
-    align-items: center;
-    justify-content: center;
-}
-.gt-example ul li{
-    padding-left: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.fb-share-button {
-    display: flex !important;
-}
 /* .gt-example ul li > iframe {
 
 } */
