@@ -16,6 +16,8 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import './NavBar.css';
+import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
+import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 
 const AntTabs = withStyles({
   indicator: {
@@ -89,8 +91,11 @@ const Navbar = props => {
         <Toolbar >
         
             <Typography variant="h5" className={classes.title + ' gt-logo-container'}>
-              <img src="/logo.png" className="gt-logo" alt="gettweeet logo"/>
-              <span className="gt-logo-text">getTweet</span>
+              <span className="gt-logo-text">
+                <span>get</span>
+                <span class="gt-logo">t<GetAppRoundedIcon fontSize='large'/></span>
+                <span class="gt-logo-weet" >&nbsp;weet</span>
+              </span>
             </Typography>
             <AntTabs 
             variant='fullWidth' 

@@ -17,5 +17,23 @@
     align-items: center;
 }
 .gt-logo-text {
+    display: flex;
+    align-items: center;
     font-size: 28px !important;
+}
+
+.gt-logo-text > .gt-logo {
+    font-family: 'Courgette', cursive;
+    font-size: 50px;
+}
+.gt-logo-text > .gt-logo-weet {
+    margin-left: -15px;
+}
+
+.gt-logo-text > .gt-logo > svg {
+    fill: #f4f4f4;
+    display: block;
+    margin-top: -30px;
+    margin-left: 12px;
+    width: 18px;
 }
