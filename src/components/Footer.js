@@ -87,23 +87,7 @@ const Footer = (props) => {
                 <p>
                   <ul>
                     <li>
-                      Copyright getTweet &nbsp;
-                      <a
-                        class="copyrighted-badge"
-                        title="Copyrighted.com Registered &amp; Protected"
-                        target="_blank"
-                        href="https://www.copyrighted.com/website/iXArDPJ9gnuu7So7"
-                      >
-                        <img
-                          alt="Copyrighted.com Registered &amp; Protected"
-                          border="0"
-                          width="125"
-                          height="25"
-                          srcset="https://static.copyrighted.com/badges/125x25/04_1_2x.png 2x"
-                          src="https://static.copyrighted.com/badges/125x25/04_1.png"
-                        />
-                      </a>
-                      &nbsp; 2020. All rights reserved.
+                      Copyright getTweet &copy; 2020. All rights reserved.
                     </li>
                     <li>
                       <a
