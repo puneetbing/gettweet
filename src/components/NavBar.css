@@ -1,61 +1,65 @@
 .ui-tab > .MuiTab-wrapper {
-    flex-direction: row;
+  flex-direction: row;
 }
 .MuiBottomNavigation-root {
-    color: #f4f4f4;
-    height: 72px !important;
+  color: #f4f4f4;
+  height: 72px !important;
 }
 .gt-doc-icon {
-    margin-right: 10px !important;
+  margin-right: 10px !important;
 }
 .gt-logo {
-    height: 69px;
+  height: 69px;
 }
 .gt-logo-container {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  cursor: pointer;
 }
 .gt-logo-text {
-    display: flex;
-    align-items: center;
-    font-size: 28px !important;
+  display: flex;
+  align-items: center;
+  font-size: 28px !important;
 }
 
 .gt-logo-text > .gt-logo {
-    font-family: 'Courgette', cursive;
-    font-size: 50px;
+  font-family: "Courgette", cursive;
+  font-size: 50px;
 }
 .gt-logo-text > .gt-logo-weet {
-    margin-left: -15px;
+  margin-left: -15px;
 }
 
 .gt-logo-text > .gt-logo > svg {
-    fill: #f4f4f4;
-    display: block;
-    margin-top: -30px;
-    margin-left: 12px;
-    width: 18px;
+  fill: #f4f4f4;
+  display: block;
+  margin-top: -30px;
+  margin-left: 12px;
+  width: 18px;
 }
 
 button:focus {
-    outline: none !important;
+  outline: none !important;
 }
 
 .gt-policy {
-    color: #404040;
-    padding: 20px;
-    margin-top: 10px;
-    margin-right: 10px;
+  color: #404040;
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .gt-main-container {
-    background-color: #f4f4f4;
-    padding-left: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    min-height: 100vh;
+  background-color: #f4f4f4;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+}
+.gt-extension {
+    height: 450px;
+    width: 650px;
 }

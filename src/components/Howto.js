@@ -3,10 +3,10 @@ import Typography from '@material-ui/core/Typography';
 import './Howto.css';
 import Slide from '@material-ui/core/Slide';
 
-const Howto = () => {
+const Howto = ({direction}) => {
     return (
         <Slide 
-            direction="left" 
+            direction={direction}
             in={true} 
             mountOnEnter 
             unmountOnExit
