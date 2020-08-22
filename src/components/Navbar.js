@@ -9,15 +9,12 @@ import Howto from './Howto';
 import ChromeExtension from './ChromeExtension';
 import Search from './Search';
 import HomeOutlinedIcon from '@material-ui/icons/Home';
-// import ExtensionIcon from '@material-ui/icons/Extension';
 import Container from '@material-ui/core/Container';
 import HelpIcon from '@material-ui/icons/Help';
-import DescriptionIcon from '@material-ui/icons/Description';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import './NavBar.css';
-import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
 import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
+import Footer from './Footer';
+import Privacy from './Privacy';
 
 const AntTabs = withStyles({
   indicator: {
@@ -41,14 +38,12 @@ const routeMap = {
   '/' : <Search />,
   '/howto' : <Howto />,
   '/extension' : <ChromeExtension />,
-  '/privacypolicy': <div> Some Policy</div>
+  '/privacy': <Privacy />
 };
-
-const tabMap = ["/", "/howto", "/extension", "/privacypolicy"];
 
 const Navbar = props => {
   const classes = useStyles();
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(100);
   const [containerHeight, setContainerHeight] = useState('92vh');
 
   const pageComponent = route => {
@@ -70,7 +65,7 @@ const Navbar = props => {
   }
 
   const handleChange = (event, newValue) => {
-    props.history.push(tabMap[newValue]);
+    props.history.push(Object.keys(routeMap)[newValue]);
     if (newValue === 1 ){
       setContainerHeight('152vh');
     } else {
@@ -82,8 +77,6 @@ const Navbar = props => {
   if (!routeMap[window.location.pathname]) {
     window.location.pathname="/";
   }
-  
-  const currentRoute = tabMap[selectedTab];
   return (
     <div>
       <AppBar height={200} className="gt-navbar" position="static" style={navBarStyle}>
@@ -115,20 +108,10 @@ const Navbar = props => {
       </AppBar>
       <Container maxWidth="md">
         <Typography component="div" style={innerContainerStyle} >
-            {pageComponent(currentRoute)}
+            {pageComponent(window.location.pathname)}
         </Typography>
       </Container>
-      <BottomNavigation 
-        value={selectedTab} 
-        onChange={handleChange} 
-        className={classes.root}
-        showLabels
-        style={navBarStyle}
-      >
-                    <Tab className="ui-tab " label="Privacy Policy" value="privacypolicy" icon={<DescriptionIcon className="gt-doc-icon" color="active"/>} /> />
-            {/* <Tab className="ui-tab" icon={<HelpIcon color="disabled" style={{marginRight: "10px"}}/>} label="How to" /> */}
-        {/* <BottomNavigationAction label="Privacy Policy" value="privacypolicy" icon={<DescriptionIcon color="disabled"/>} /> */}
-      </BottomNavigation>
+      <Footer />
     </div>
   );
 }
