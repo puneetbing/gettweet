@@ -11,9 +11,7 @@ jobs:
         fetch-depth: 2
     - name: Deployment Steps
       run: |
-        git diff HEAD^ HEAD
-        ALL_FILES=`git diff-tree --no-commit-id --name-only -r ${{ github.sha }}`
-        IS_FRONTEND=echo $ALL_FILES | grep -Ec "^src\/|^public\/"
+        IS_FRONTEND=`git diff-tree --no-commit-id --name-only -r ${{ github.sha }}| grep -Ec "^src\/|^public\/"`
         if [ $IS_FRONTEND -eq 0 ];then
           echo "No frontend files found exiting !"
           ls
