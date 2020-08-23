@@ -6,7 +6,12 @@ jobs:
   frontend_deploy:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+      with: 
+        fetch-depth: 0
     - name: Deployment Steps
       run: |
+        git diff origin/master ${{ github.sha }}
+        git diff HEAD^ HEAD
         ALL_FILES=`git diff-tree --no-commit-id --name-only -r ${{ github.sha }}`
         echo "All files : $ALL_FILES"
