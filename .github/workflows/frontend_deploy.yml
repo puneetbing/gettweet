@@ -11,6 +11,7 @@ jobs:
         fetch-depth: 2
     - name: Deployment Steps
       run: |
+        git diff-tree --name-only -r HEAD^ HEAD
         IS_FRONTEND=`git diff-tree --name-only -r HEAD^ HEAD| grep -Ec "^src\/|^public\/"`
         if [ $IS_FRONTEND -eq 0 ];then
           echo "No frontend files found exiting !"
