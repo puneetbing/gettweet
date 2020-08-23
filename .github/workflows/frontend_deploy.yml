@@ -11,14 +11,13 @@ jobs:
         fetch-depth: 2
     - name: Deployment Steps
       run: |
-        npm --version
         IS_FRONTEND=`git diff-tree --name-only -r HEAD^ HEAD|tr " " "\n" |grep -Ec "^src\/|^public\/" || true`
-        echo "IS_FRONTEND ---> $IS_FRONTEND"
         if [ $IS_FRONTEND -eq 0 ];then
           echo "No frontend files found exiting !"
           exit 0
         fi
         echo "✅ Frontend Files found, starting deployment ...."
+        npm install
         npm run build
         aws s3 sync ./build s3://$FRONTEND_BUCKET_NAME
         aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
