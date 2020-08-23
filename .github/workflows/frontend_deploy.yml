@@ -12,6 +12,6 @@ jobs:
     - name: Deployment Steps
       run: |
         ALL_FILES=`git diff-tree --name-only -r HEAD^ HEAD`
-        IS_FRONTEND=`echo $ALL_FILES|tr " " "\n" |grep -Ec "^src\/|^public\/"`
+        IS_FRONTEND=`echo $ALL_FILES|tr ' ' '\n' |grep -Ec '^src\/|^public\/'`
         echo "IS_FRONTEND --> $IS_FRONTEND"
         
