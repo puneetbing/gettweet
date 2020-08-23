@@ -6,12 +6,14 @@ jobs:
   frontend_deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with: 
-        fetch-depth: 2
+    - uses: trilom/file-changes-action@v1.2.4
     - name: Deployment Steps
       run: |
-        ALL_FILES=`git diff-tree --name-only -r HEAD^ HEAD`
-        IS_FRONTEND=`echo $ALL_FILES|tr ' ' '\n' |grep -Ec '^src\/|^public\/'`
-        echo "IS_FRONTEND --> $IS_FRONTEND"
+        ALL_FILES=${{ steps.file_changes.outputs.files}}
+        IS_FRONTEND=`echo $ALL_FILES|tr " " "\n" |grep -Ec "^src\/|^public\/"`
+        if [ $IS_FRONTEND -eq 0 ];then
+          echo "No frontend files found exiting !"
+          exit 0
+        fi
+        echo "Frontend Files found, starting deployment"
         
