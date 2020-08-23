@@ -20,7 +20,7 @@ const ChromeExtension = () => {
                 <li>
                     Download the extension from here :  
                     <a href="https://chrome.google.com/webstore/detail/twitter-based-videogif-do/ofkileplaebncapjieeccfabeakdfffa" rel="noopener noreferrer" target="_blank">
-                        <img src="/images/extension.png"></img>
+                        <img alt="Chrome Extesnion badge for chrome webstore"src="/images/extension.png"></img>
                     </a>
                 </li>
                 <li>

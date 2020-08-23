@@ -8,7 +8,7 @@ const CookiePolicy = (props) => {
       <p>
         This cookie policy (&quot;Policy&quot;) describes what cookies are and
         how and they&#039;re being used by the{" "}
-        <a target="_blank" rel="nofollow" href="https://gettweet.in">
+        <a target="_blank" rel="noopener noreferrer" href="https://gettweet.in">
           gettweet.in
         </a>{" "}
         website (&quot;Website&quot; or &quot;Service&quot;) and any of its
@@ -22,7 +22,7 @@ const CookiePolicy = (props) => {
         you regarding accepting or declining the use of cookies. For further
         information on how we use, store and keep your personal data secure, see
         our{" "}
-        <a target="_blank" rel="nofollow" href="https://gettweet.in/privacy">
+        <a target="_blank" rel="noopener noreferrer" href="https://gettweet.in/privacy">
           Privacy Policy
         </a>
         .
@@ -68,7 +68,7 @@ const CookiePolicy = (props) => {
         can change your browser's settings to delete cookies that have already
         been set and to not accept new cookies. To learn more about how to do
         this or to learn more about cookies, visit{" "}
-        <a target="_blank" href="https://www.internetcookies.org">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.internetcookies.org">
           internetcookies.org
         </a>
       </p>
@@ -82,6 +82,7 @@ const CookiePolicy = (props) => {
         such changes. Policy was created with{" "}
         <a
           style={{ color: "inherit" }}
+          rel="noopener noreferrer"
           target="_blank"
           href="https://www.websitepolicies.com/cookie-policy-generator"
         >

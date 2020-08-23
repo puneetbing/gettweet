@@ -2,19 +2,6 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import "./Footer.css";
 
-const styles = (theme) => ({
-  root: {
-    ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    marginTop: theme.spacing.unit * 8,
-    padding: `${theme.spacing.unit * 6}px 0`,
-  },
-});
-
 const Footer = (props) => {
   return (
     <Paper elevation={1}>
@@ -69,6 +56,7 @@ const Footer = (props) => {
                       class="gt-footer-link"
                       href="mailto:mount.refidim@gmail.com"
                       target="_blank"
+                      rel="noopener noreferrer"
                       title="glorythemes"
                     >
                       mount.refidim@gmail.com
@@ -95,7 +83,7 @@ const Footer = (props) => {
                         data-pin-round="true"
                         href="https://www.pinterest.com/pin/create/button/"
                       >
-                        <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" />
+                        <img alt="pintrest save icon" src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" />
                       </a>
                     </li>
                     <li>
