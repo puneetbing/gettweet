@@ -12,5 +12,5 @@ jobs:
     - name: Deployment Steps
       run: |
         ALL_FILES=`git diff-tree --name-only -r HEAD^ HEAD`
-        echo "ALL FILES ----> $ALL_FILES"
+        echo $ALL_FILES|egrep -c "^src\/|^public\/"
         
